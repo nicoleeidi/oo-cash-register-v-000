@@ -1,10 +1,13 @@
 class CashRegister
-  attr_accessor :total, :discount, :lasttransaction 
+  attr_accessor :total, :discount, :lasttransaction
+
+  if item == @items[-1]
+  @lasttransaction= 
 
   def initialize(discount= nil)
     @total= 0
     @items= []
-    
+
     @discount= discount
   end
   def add_item(item,price,quantity= 1)
@@ -12,7 +15,6 @@ class CashRegister
     until i==quantity
     @items << item
     #if we want to set price...
-    @lasttransaction  
     i+=1
     end
     @total += price*quantity
