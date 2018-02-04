@@ -18,8 +18,13 @@ class CashRegister
     @items
   end
   def apply_discount
-    @total.to_i - discount
-    # if discount is given as a number, not percentage
+    if @discount= nil
+      return "There is no discount to apply."
+    else 
+      total= @total.to_i - discount
+      return "After the discount, the total comes to $#{total}."
+    end 
+        # if discount is given as a number, not percentage
   end
   def void_last_transaction
   end
