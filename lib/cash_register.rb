@@ -11,6 +11,7 @@ class CashRegister
     i=0
     until i==quantity
     @items << item
+    @price= price
     i+=1
     end
     @total += price*quantity
