@@ -30,6 +30,7 @@ class CashRegister
       discount= @discount.to_f/100.to_f
       total= @total - discount*@total
       realtotal= total.to_i
+      @total= realtotal
       return "After the discount, the total comes to $#{realtotal}."
     end
         # if discount is given as a number, not percentage
