@@ -4,6 +4,7 @@ class CashRegister
   def initialize(discount= nil)
     @total= 0
     @items= []
+    @lasttransaction= @items[-1]
     @discount= discount
   end
   def add_item(item,price,quantity= 1)
@@ -13,6 +14,7 @@ class CashRegister
     i+=1
     end
     @total += price*quantity
+    
   end
   def items
     @items
@@ -20,10 +22,10 @@ class CashRegister
   def apply_discount
     if @discount= nil
       return "There is no discount to apply."
-    else 
+    else
       total= @total.to_i - discount
       return "After the discount, the total comes to $#{total}."
-    end 
+    end
         # if discount is given as a number, not percentage
   end
   def void_last_transaction
