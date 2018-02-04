@@ -27,7 +27,8 @@ class CashRegister
     if @discount== nil
       return "There is no discount to apply."
     else
-      total= @total.to_i - @discount
+      discount= @discount - 100
+      total= @total.to_i - discount*@total 
       return "After the discount, the total comes to $#{total}."
     end
         # if discount is given as a number, not percentage
