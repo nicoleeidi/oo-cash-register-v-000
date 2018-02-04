@@ -18,8 +18,8 @@ class CashRegister
     @items
   end
   def apply_discount
-    i= @total.to_i
-    i - discount
+    @total.to_i - discount
+    # if discount is given as a number, not percentage
   end
   def void_last_transaction
   end
