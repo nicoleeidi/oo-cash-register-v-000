@@ -1,5 +1,5 @@
 class CashRegister
-  attr_accessor :total, :discount
+  attr_accessor :total, :discount, :lasttransaction, :price
 
   def initialize(discount= nil)
     @total= 0
@@ -14,7 +14,7 @@ class CashRegister
     i+=1
     end
     @total += price*quantity
-    
+
   end
   def items
     @items
@@ -29,5 +29,6 @@ class CashRegister
         # if discount is given as a number, not percentage
   end
   def void_last_transaction
+    @total - @lasttransaction.price
   end
 end
