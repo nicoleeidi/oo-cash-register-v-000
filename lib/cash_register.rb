@@ -8,7 +8,7 @@ class CashRegister
   end
   def add_item(item,price,quantity= 1)
     i=0
-    until i=quantity
+    until i==quantity
     @items << item
     i+=1
     end
